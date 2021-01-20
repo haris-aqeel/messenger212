@@ -20,7 +20,6 @@ io.on('connection', (socket) => {
             name,
             room
         }
-        console.log("user", user)
         users.push(user)
         socket.join(room);
         socket.to(room).broadcast.emit('user-joined', name)
