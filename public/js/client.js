@@ -1,5 +1,6 @@
 const socket = io('https://messenger21.herokuapp.com/');
 // variables
+
 let chatForm = document.getElementById('chatForm');
 let chatBody = document.getElementById('chatBody');
 let msgInp = document.getElementById('msgInp');
