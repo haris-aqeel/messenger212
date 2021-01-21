@@ -181,7 +181,7 @@
     </div>
     <!-- Chat Bot UI Ends -->
     <!-- Time line Html Start -->
-    <h1 class="hide">Responsive Timeline using Flexbox</h1>
+    <!-- <h1 class="hide">Responsive Timeline using Flexbox</h1>
     <div class="timeline hide">
         <div class="timeline-item">
             <div class="timeline-date">
@@ -238,7 +238,7 @@
                 <i class="fas fa-power-off fa-icon"></i>
             </div>
         </div>
-    </div>
+    </div> -->
     <script type="257be86a981729866f2fa61c-text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -275,7 +275,8 @@
             });
             $('.chat-mail button').click(function () {
                 var firstInput = document.getElementById("name");
-                if (firstInput.value) {
+                var room = document.getElementById('room');
+                if (firstInput.value != '' & room.value != '') {
                     $('.chat-mail').addClass('hide');
                     $('.chat-body').removeClass('hide');
                     $('.chat-input').removeClass('hide');
@@ -284,6 +285,7 @@
                 }
                 else{
                     firstInput.placeholder="Enter Your Name First!"
+                    room.placeholder="Room is required!"
                 }
             });
             $('.end-chat').click(function () {
