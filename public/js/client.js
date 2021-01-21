@@ -59,6 +59,7 @@ function getMsg() {
     }
     appendMessage(msg.userName,msg.message,"me")
     socket.emit('message',(msg))
+    textArea.value=''
 }
 function endChat() {
     socket.emit('disconnect-user',userName,room)
