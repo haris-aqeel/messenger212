@@ -53,13 +53,15 @@ function appendMessage(userName,message,type) {
     }
 }
 function getMsg() {
-    var msg = {
-        userName,
-        message: textArea.value
+    if (textArea.value != '') {
+        var msg = {
+            userName,
+            message: textArea.value
+        }
+        appendMessage(msg.userName,msg.message,"me")
+        socket.emit('message',(msg))
+        textArea.value=''
     }
-    appendMessage(msg.userName,msg.message,"me")
-    socket.emit('message',(msg))
-    textArea.value=''
 }
 function endChat() {
     socket.emit('disconnect-user',userName,room)
