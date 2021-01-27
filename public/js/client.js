@@ -52,6 +52,19 @@ function appendMessage(userName,message,type) {
         audio.play();
     }
 }
+
+textarea.addEventListener('keyup', (e) => {
+    if(e.key === 'Enter') {
+        var msg = {
+            userName,
+            message: textArea.value
+        }
+        appendMessage(msg.userName,msg.message,"me")
+        socket.emit('message',(msg))
+        textArea.value=''
+    }
+})
+
 function getMsg() {
     if (textArea.value != '') {
         var msg = {
