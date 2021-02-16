@@ -61,7 +61,6 @@ textarea.addEventListener('keyup', (e) => {
         }
         appendMessage(msg.userName,msg.message,"me")
         socket.emit('message',(msg))
-        textArea.value=''
     }
 })
 
