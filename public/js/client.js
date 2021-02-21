@@ -55,12 +55,7 @@ function appendMessage(userName,message,type) {
 
 textarea.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
-        var msg = {
-            userName,
-            message: textArea.value
-        }
-        appendMessage(msg.userName,msg.message,"me")
-        socket.emit('message',(msg))
+       getMsg()
     }
 })
 
